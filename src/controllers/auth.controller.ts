@@ -20,7 +20,6 @@ export class AuthController {
       return;
     }
     const token = await this.tokenService.genereateJWT(req, res, body.email);
-    console.log(token)
     body.accesToken = token;
     const loggedIn = await this.authService.logIn(body);
     res.status(loggedIn ? 200 : 401);
@@ -53,7 +52,6 @@ export class AuthController {
     const complexPassword = await this.authService.register(body);
     body.password = complexPassword;
     await this.userService.create(body);
-    console.log(token);
     res.status(200);
     res.send("User added");
     res.end();

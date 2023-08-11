@@ -8,7 +8,6 @@ export function verifyToken(req, res, next){
       return;
     };
     const token = authorization.split(" ")[1];
-    console.log(token)
     try{
       jwt.verify(token, process.env.JWT_SECRET)
     } catch(e) {

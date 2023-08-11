@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { AuthController } from "../controllers/auth.controller";
-import { verifyToken } from "../utils/verify-token";
 
 export default class authControllerRoute {
   private readonly router = Router();

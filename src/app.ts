@@ -23,10 +23,8 @@ app.use("/", new ProductRoute().routes);
 app.use("/", new AuthRoute().routes);
 
 app.get('*', function(req, res){
-  console.log(req.headers)
   res.status(404);
   res.send({error: "route not found"})
-  // res.sendFile(__dirname+'/public/error.html');
 })
 
 //init static content
